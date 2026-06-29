@@ -27,7 +27,7 @@ class SotongSamaePromoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: '${AppCatalog.siteName} - ${AppCatalog.prelaunchBadge}',
+      title: AppCatalog.ogTitle,
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
