@@ -29,7 +29,7 @@ class FooterSection extends StatelessWidget {
               ),
               const SizedBox(height: 6),
               Text(
-                '사매면 지역 생활정보 플랫폼',
+                AppCatalog.prelaunchBadge,
                 style: TextStyle(color: Colors.white.withValues(alpha: 0.75), fontSize: 14),
               ),
               const SizedBox(height: 20),

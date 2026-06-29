@@ -27,7 +27,7 @@ class SotongSamaePromoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: AppCatalog.siteName,
+      title: '${AppCatalog.siteName} - ${AppCatalog.prelaunchBadge}',
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
@@ -64,6 +64,7 @@ class PromoHomePage extends StatefulWidget {
 class _PromoHomePageState extends State<PromoHomePage> {
   final _scrollController = ScrollController();
   final _topKey = GlobalKey();
+  final _promoKey = GlobalKey();
   final _featuresKey = GlobalKey();
   final _villagesKey = GlobalKey();
   final _tourismKey = GlobalKey();
@@ -78,6 +79,7 @@ class _PromoHomePageState extends State<PromoHomePage> {
   void _scrollToAnchor(String anchor) {
     final key = switch (anchor) {
       'top' => _topKey,
+      'promo' => _promoKey,
       'features' => _featuresKey,
       'villages' => _villagesKey,
       'tourism' => _tourismKey,
@@ -93,38 +95,11 @@ class _PromoHomePageState extends State<PromoHomePage> {
     );
   }
 
-  void _exploreApp() => _scrollToAnchor('features');
+  void _browsePromo() => _scrollToAnchor('promo');
 
-  void _showAboutDialog() {
-    showDialog<void>(
-      context: context,
-      builder: (context) => AlertDialog(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: const Text('사매면 소개'),
-        content: const SingleChildScrollView(
-          child: Text(
-            '전북 남원시 사매면은 문학·관광·농촌이 어우러진 지역입니다.\n\n'
-            '혼불문학관, 서도역, 매화언덕 문화복합단지 등 지역 자원과 '
-            '21개 마을 커뮤니티가 함께 성장하고 있습니다.\n\n'
-            '소통사매는 주민의 생활정보, 방문객의 여행 안내, '
-            '귀농귀촌 관심자의 정착 정보, 지역 발전의 참여 소식을 '
-            '한곳에서 전달하는 사매면 맞춤 앱입니다.',
-            style: TextStyle(height: 1.65),
-          ),
-        ),
-        actions: [
-          TextButton(onPressed: () => Navigator.pop(context), child: const Text('닫기')),
-          FilledButton(
-            onPressed: () {
-              Navigator.pop(context);
-              _scrollToAnchor('tourism');
-            },
-            child: const Text('관광 보기'),
-          ),
-        ],
-      ),
-    );
-  }
+  void _showFeatures() => _scrollToAnchor('features');
+
+  void _contact() => _scrollToAnchor('contact');
 
   @override
   Widget build(BuildContext context) {
@@ -139,18 +114,21 @@ class _PromoHomePageState extends State<PromoHomePage> {
               children: [
                 TopNavigation(
                   onAnchorTap: _scrollToAnchor,
-                  onNotifyTap: openLaunchNotifyEmail,
+                  onContactTap: _contact,
                 ),
                 KeyedSubtree(
                   key: _topKey,
                   child: HeroSection(
-                    onExploreTap: _exploreApp,
-                    onAboutTap: _showAboutDialog,
-                    onNotifyTap: openLaunchNotifyEmail,
+                    onPromoBrowseTap: _browsePromo,
+                    onFeaturesTap: _showFeatures,
+                    onContactTap: _contact,
                   ),
                 ),
                 const SizedBox(height: 20),
-                const AudienceSection(),
+                KeyedSubtree(
+                  key: _promoKey,
+                  child: const AudienceSection(),
+                ),
                 const SizedBox(height: 12),
                 const CoreValuesSection(),
                 FeaturesSection(sectionKey: _featuresKey),
@@ -173,7 +151,7 @@ class _PromoHomePageState extends State<PromoHomePage> {
               left: 0,
               right: 0,
               bottom: 0,
-              child: _MobileStickyCta(onTap: openLaunchNotifyEmail),
+              child: _MobileStickyCta(onTap: _contact),
             ),
         ],
       ),
@@ -206,8 +184,8 @@ class _MobileStickyCta extends StatelessWidget {
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
           ),
           onPressed: onTap,
-          icon: const Icon(Icons.notifications_active_outlined),
-          label: const Text('앱 출시 알림 받기', style: TextStyle(fontWeight: FontWeight.w800)),
+          icon: const Icon(Icons.mail_outline),
+          label: const Text('문의하기', style: TextStyle(fontWeight: FontWeight.w800)),
         ),
       ),
     );

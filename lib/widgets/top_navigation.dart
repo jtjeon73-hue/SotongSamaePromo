@@ -8,11 +8,11 @@ class TopNavigation extends StatelessWidget {
   const TopNavigation({
     super.key,
     required this.onAnchorTap,
-    required this.onNotifyTap,
+    required this.onContactTap,
   });
 
   final void Function(String anchor) onAnchorTap;
-  final VoidCallback onNotifyTap;
+  final VoidCallback onContactTap;
 
   @override
   Widget build(BuildContext context) {
@@ -100,8 +100,8 @@ class TopNavigation extends StatelessWidget {
                   ),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                 ),
-                onPressed: onNotifyTap,
-                child: Text(isMobile ? '알림' : '출시 알림'),
+                onPressed: onContactTap,
+                child: const Text('문의하기'),
               ),
             ],
           ),

@@ -5,7 +5,7 @@
     "display": "standalone",
     "background_color": "#FFF7ED",
     "theme_color": "#16A34A",
-    "description": "사매면 생활정보 앱 소통사매 홍보 사이트",
+    "description": "사매면 마을 소식, 관광지, 생활정보, 사매발전 이야기까지 한눈에 볼 수 있는 지역 생활정보 앱을 미리 만나보세요.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

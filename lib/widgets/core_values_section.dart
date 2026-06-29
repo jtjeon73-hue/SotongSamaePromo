@@ -13,7 +13,7 @@ class CoreValuesSection extends StatelessWidget {
     return LandingSection(
       eyebrow: 'WHY SOTONGSAMAe',
       title: '소통사매가 전하는 가치',
-      subtitle: '주민의 일상부터 방문객의 여행, 귀농귀촌의 정착, 지역 발전의 참여까지 — 사매면에 맞춘 정보를 담았습니다.',
+      subtitle: '출시 전 미리보기 — 주민의 일상부터 방문객의 여행, 귀농귀촌의 정착, 지역 발전의 참여까지 사매면에 맞춘 정보를 담았습니다.',
       backgroundDecoration: AppDecorations.sectionTint(AppColors.cream),
       child: ResponsiveGrid(
         minCardWidth: 260,

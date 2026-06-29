@@ -56,7 +56,7 @@ class DevelopmentSection extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  '주민 제안부터 사업 진행까지, 사매면의 변화를 앱에서 투명하게 따라가세요.',
+                  '주민 제안부터 사업 진행까지, 사매면의 변화를 출시 후 앱에서 투명하게 따라갈 수 있습니다.',
                   style: TextStyle(
                     color: Colors.white.withValues(alpha: 0.88),
                     fontSize: isMobile ? 13 : 14,

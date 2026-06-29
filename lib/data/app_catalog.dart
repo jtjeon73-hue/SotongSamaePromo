@@ -76,13 +76,18 @@ class AiExample {
 abstract final class AppCatalog {
   static const brandName = '소통사매';
   static const siteName = '소통사매프로모';
+  static const prelaunchBadge = '소통사매앱 출시 전 프로모 사이트';
+  static const siteIntro = '소통사매앱 출시 전 프로모 사이트입니다.';
+  static const siteUrl = 'https://jtjeon73-hue.github.io/SotongSamaePromo/';
   static const tagline = '사매면 생활정보를 한눈에, 소통사매';
   static const subtitle =
-      '마을 소식부터 관광·생활정보·사매발전까지 — 사매면을 더 가깝게 잇는 지역 플랫폼';
-  static const heroLead =
-      '주민·방문객·귀농귀촌 관심자 모두를 위한 사매면 맞춤 앱';
+      '사매면 마을 소식, 관광지, 생활정보, 사매발전 이야기까지 한눈에 볼 수 있는 지역 생활정보 앱을 미리 만나보세요.';
+  static const heroLead = '출시 예정 · 사매면 맞춤 지역 생활정보 앱 미리보기';
   static const appDescription =
-      '공지와 마을 소식, 관광 안내, 생활 편의, 사매발전 참여, AI 마을비서까지 — 사매면의 하루를 돕는 실제 서비스형 주민플랫폼';
+      '공지와 마을 소식, 관광 안내, 생활 편의, 사매발전 참여, AI 마을비서까지 — 사매면의 하루를 돕는 주민플랫폼을 준비하고 있습니다.';
+  static const ctaTitle = '소통사매앱 출시를 준비하고 있습니다';
+  static const ctaSubtitle =
+      '이 프로모 사이트에서 주요 기능과 지역 콘텐츠를 미리 살펴보시고, 출시 소식이나 문의가 필요하시면 알려주세요.';
 
   // TODO: 앱스토어 링크 확정 후 교체
   static const playStoreUrl = '';
@@ -92,7 +97,7 @@ abstract final class AppCatalog {
     (value: '21', label: '마을 연결'),
     (value: '5', label: '핵심 탭'),
     (value: '8', label: '생활 메뉴'),
-    (value: 'AI', label: '마을비서'),
+    (value: '출시', label: '예정'),
   ];
 
   static const navItems = <({String label, String anchor})>[
@@ -107,25 +112,25 @@ abstract final class AppCatalog {
     AudienceSegment(
       label: '주민',
       headline: '우리 마을 소식, 놓치지 마세요',
-      description: '공지·민원·마을 게시판을 스마트폰 하나로 확인합니다.',
+      description: '출시 후 공지·민원·마을 게시판을 스마트폰 하나로 확인할 수 있습니다.',
       icon: Icons.home_outlined,
     ),
     AudienceSegment(
       label: '방문객',
       headline: '사매 여행, 미리 알고 가세요',
-      description: '혼불문학관·서도역 등 명소와 길찾기·먹거리를 한곳에.',
+      description: '혼불문학관·서도역 등 명소와 길찾기·먹거리 안내를 미리 살펴보세요.',
       icon: Icons.explore_outlined,
     ),
     AudienceSegment(
       label: '귀농·귀촌',
       headline: '정착 정보, 먼저 살펴보세요',
-      description: '지원사업·청년 네트워크·생활 정보를 차근차근 안내합니다.',
+      description: '지원사업·청년 네트워크·생활 정보를 출시 전에 미리 확인하세요.',
       icon: Icons.cottage_outlined,
     ),
     AudienceSegment(
       label: '지역 발전',
       headline: '함께 만드는 사매면의 내일',
-      description: '발전협의회·주민제안·사업 진행을 투명하게 공유합니다.',
+      description: '발전협의회·주민제안·사업 진행을 투명하게 공유할 준비를 하고 있습니다.',
       icon: Icons.trending_up_outlined,
     ),
   ];
@@ -133,42 +138,42 @@ abstract final class AppCatalog {
   static const coreValues = <PromoItem>[
     PromoItem(
       title: '지역 소식',
-      subtitle: '면사무소 공지와 지원사업을 놓치지 않도록, 주민에게 꼭 필요한 행정 소식을 모았습니다.',
+      subtitle: '면사무소 공지와 지원사업을 놓치지 않도록, 출시 후 주민에게 필요한 행정 소식을 모을 예정입니다.',
       icon: Icons.campaign_outlined,
       accentColor: AppColors.deepGreen,
       audience: '주민',
     ),
     PromoItem(
       title: '마을 정보',
-      subtitle: '21개 마을 게시판에서 이웃의 일상과 사진을 나누며, 마을 공동체를 이어갑니다.',
+      subtitle: '21개 마을 게시판에서 이웃의 일상과 사진을 나누는 주민 소통 공간을 준비 중입니다.',
       icon: Icons.diversity_3_outlined,
       accentColor: AppColors.olive,
       audience: '주민',
     ),
     PromoItem(
       title: '관광 안내',
-      subtitle: '혼불문학관·서도역 등 사매의 매력을 방문 전에 미리 살펴보고, 현장에서도 길을 잃지 마세요.',
+      subtitle: '혼불문학관·서도역 등 사매의 매력을 방문 전에 미리 살펴보고, 출시 후 현장 안내도 받아보세요.',
       icon: Icons.landscape_outlined,
       accentColor: AppColors.green,
       audience: '방문객',
     ),
     PromoItem(
       title: '생활 편의',
-      subtitle: '버스·의료·장보기부터 농업·축산·과수까지, 사매면에서 사는 데 필요한 정보를 정리했습니다.',
+      subtitle: '버스·의료·장보기부터 농업·축산·과수까지, 사매면 생활에 필요한 정보를 정리해 둘 예정입니다.',
       icon: Icons.home_repair_service_outlined,
       accentColor: AppColors.heroAccent,
       audience: '주민',
     ),
     PromoItem(
       title: '사매발전',
-      subtitle: '주민이 제안하고, 함께 결정하며, 사매면의 미래 사업을 투명하게 따라갈 수 있습니다.',
+      subtitle: '주민이 제안하고 함께 결정하는 사매면 미래 사업을 출시 후 투명하게 따라갈 수 있습니다.',
       icon: Icons.handshake_outlined,
       accentColor: AppColors.deepGreen,
       audience: '지역 발전',
     ),
     PromoItem(
       title: 'AI 마을비서',
-      subtitle: '복잡한 지역 정보도 자연어로 물어보세요. 귀농·관광·행사 안내가 한결 쉬워집니다.',
+      subtitle: '복잡한 지역 정보도 자연어로 물어보는 AI 마을비서 기능을 준비 중입니다.',
       icon: Icons.smart_toy_outlined,
       accentColor: AppColors.green,
       audience: '귀농·귀촌',
@@ -178,27 +183,27 @@ abstract final class AppCatalog {
   static const appTabs = <PromoItem>[
     PromoItem(
       title: '공지사항',
-      subtitle: '행정·농업·생활 공지와 면사무소 소식을 한곳에서',
+      subtitle: '행정·농업·생활 공지와 면사무소 소식 (출시 예정)',
       icon: Icons.campaign_outlined,
     ),
     PromoItem(
       title: '마을소식',
-      subtitle: '21개 마을 게시판, 사진·댓글·좋아요로 이웃과 소통',
+      subtitle: '21개 마을 게시판, 사진·댓글·좋아요 미리보기',
       icon: Icons.diversity_3_outlined,
     ),
     PromoItem(
       title: '사매발전',
-      subtitle: '발전협의회·청년회·주민제안과 사업 진행 현황',
+      subtitle: '발전협의회·청년회·주민제안과 사업 진행 현황 (준비 중)',
       icon: Icons.handshake_outlined,
     ),
     PromoItem(
       title: '관광',
-      subtitle: '명소 소개, 영상, 길찾기, 먹거리까지 여행 동선 지원',
+      subtitle: '명소 소개, 영상, 길찾기, 먹거리 안내 미리보기',
       icon: Icons.landscape_outlined,
     ),
     PromoItem(
       title: 'AI비서',
-      subtitle: '채팅형 마을비서로 공지·관광·귀농 정보를 바로 질문',
+      subtitle: '채팅형 마을비서 기능 준비 중',
       icon: Icons.smart_toy_outlined,
     ),
   ];
@@ -250,7 +255,7 @@ abstract final class AppCatalog {
     ),
     TourismSpot(
       name: '매화언덕 문화복합단지',
-      summary: '매화와 문화 행사가 어우러지는 사매의 미래 관광 거점. 사업 진행과 행사 일정도 앱에서 확인.',
+      summary: '매화와 문화 행사가 어우러지는 사매의 미래 관광 거점. 출시 후 사업 진행과 행사 일정도 확인할 수 있습니다.',
       visitorNote: '문화·축제 거점',
       icon: Icons.local_florist_outlined,
       location: '전북 남원시 사매면 매화언덕 예정 부지',
@@ -266,7 +271,7 @@ abstract final class AppCatalog {
     ),
     TourismSpot(
       name: '사매 맛집 및 로컬푸드',
-      summary: '주민이 추천하는 식당과 농산물 직거래 정보. 사매의 맛과 로컬푸드를 현장에서 만나보세요.',
+      summary: '주민이 추천하는 식당과 농산물 직거래 정보. 출시 후 사매의 맛과 로컬푸드를 안내받을 수 있습니다.',
       visitorNote: '향토 음식·직거래',
       icon: Icons.restaurant_outlined,
       location: '사매면 식당 및 로컬푸드 판매처',
@@ -289,7 +294,7 @@ abstract final class AppCatalog {
     ),
     DevelopmentItem(
       title: '매화언덕 문화복합단지',
-      description: '문화·관광·주민 행사를 연결하는 복합단지 사업. 진행 상황을 앱에서 따라갈 수 있습니다.',
+      description: '문화·관광·주민 행사를 연결하는 복합단지 사업. 출시 후 진행 상황을 따라갈 수 있습니다.',
       icon: Icons.local_florist_outlined,
       highlights: ['사업 진행률 표시', '주민 설명회 자료', '문화·관광 거점 조성'],
       progress: 0.64,
@@ -299,11 +304,11 @@ abstract final class AppCatalog {
   static const aiExamples = <AiExample>[
     AiExample(
       question: '오늘 면사무소 공지 알려줘',
-      answer: '주민등록 민원 처리 시간, 농번기 행정 상담 예약 등 면사무소 공지를 바로 안내합니다.',
+      answer: '주민등록 민원 처리 시간, 농번기 행정 상담 예약 등 면사무소 공지를 출시 후 바로 안내할 예정입니다.',
     ),
     AiExample(
       question: '혼불문학관 운영시간 알려줘',
-      answer: '운영시간·위치·전화번호·사진·영상·길찾기까지 관광 상세 정보와 연결됩니다.',
+      answer: '운영시간·위치·전화번호·사진·영상·길찾기까지 관광 상세 정보와 연결될 예정입니다.',
     ),
     AiExample(
       question: '사매면 행사 일정 알려줘',
@@ -316,5 +321,5 @@ abstract final class AppCatalog {
   ];
 
   static const developmentMessage =
-      '지역 데이터를 모으고, 주민과 방문객을 연결하는 사매면 디지털 플랫폼';
+      '지역 데이터를 모으고, 주민과 방문객을 연결하는 사매면 디지털 플랫폼을 준비 중입니다';
 }

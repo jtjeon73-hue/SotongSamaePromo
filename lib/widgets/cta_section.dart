@@ -51,7 +51,7 @@ class CtaSection extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '이제 사매면 정보를\n소통사매에서 만나보세요',
+                      AppCatalog.ctaTitle,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: titleSize,
@@ -61,7 +61,7 @@ class CtaSection extends StatelessWidget {
                     ),
                     const SizedBox(height: 12),
                     Text(
-                      AppCatalog.appDescription,
+                      AppCatalog.ctaSubtitle,
                       style: TextStyle(
                         color: Colors.white.withValues(alpha: 0.9),
                         fontSize: isMobile ? 14 : 16,
@@ -84,7 +84,7 @@ class CtaSection extends StatelessWidget {
                       ),
                       onPressed: onNotifyTap,
                       icon: const Icon(Icons.notifications_active_outlined),
-                      label: const Text('앱 출시 알림 받기'),
+                      label: const Text('출시 소식 알림 받기'),
                     ),
                     const SizedBox(height: 12),
                     OutlinedButton.icon(
