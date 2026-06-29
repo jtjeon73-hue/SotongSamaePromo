@@ -77,11 +77,12 @@ abstract final class AppCatalog {
   static const brandName = '소통사매';
   static const siteName = '소통사매프로모';
   static const prelaunchBadge = '소통사매앱 출시 전 프로모 사이트';
+  static const siteIntro = '소통사매앱 출시 전 프로모 사이트입니다.';
+  static const siteUrl = 'https://jtjeon73-hue.github.io/SotongSamaePromo/';
   static const tagline = '사매면 생활정보를 한눈에, 소통사매';
   static const subtitle =
-      '마을 소식, 관광지, 생활정보, 사매발전 이야기까지 사매면을 더 가깝게 연결하는 지역 생활정보 앱을 미리 만나보세요.';
-  static const heroLead =
-      '출시 예정 · 주민·방문객·귀농귀촌 관심자를 위한 사매면 맞춤 앱 미리보기';
+      '사매면 마을 소식, 관광지, 생활정보, 사매발전 이야기까지 한눈에 볼 수 있는 지역 생활정보 앱을 미리 만나보세요.';
+  static const heroLead = '출시 예정 · 사매면 맞춤 지역 생활정보 앱 미리보기';
   static const appDescription =
       '공지와 마을 소식, 관광 안내, 생활 편의, 사매발전 참여, AI 마을비서까지 — 사매면의 하루를 돕는 주민플랫폼을 준비하고 있습니다.';
   static const ctaTitle = '소통사매앱 출시를 준비하고 있습니다';
