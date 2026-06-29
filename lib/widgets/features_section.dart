@@ -18,7 +18,7 @@ class FeaturesSection extends StatelessWidget {
       anchorKey: sectionKey,
       eyebrow: 'APP FEATURES',
       title: '앱 주요 기능',
-      subtitle: '하단 5개 탭과 홈 메뉴 8종으로 사매면 생활정보를 체계적으로 연결합니다. 복잡한 지역 정보를 쓰기 쉬운 화면으로 정리했습니다.',
+      subtitle: '출시 예정인 소통사매앱의 하단 5개 탭과 홈 메뉴 8종을 미리 살펴보세요.',
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

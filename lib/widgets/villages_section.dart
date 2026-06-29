@@ -22,7 +22,7 @@ class VillagesSection extends StatelessWidget {
       anchorKey: sectionKey,
       eyebrow: '21 VILLAGES',
       title: '사매면 21개 마을을 하나로 연결합니다',
-      subtitle: '마을별 게시판에서 이웃의 소식과 사진을 나누세요. 우리 마을 이야기는 우리 마을에서 시작됩니다.',
+      subtitle: '마을별 게시판에서 이웃의 소식과 사진을 나누는 주민 소통 공간 — 출시 후 연결될 21개 마을을 미리 소개합니다.',
       backgroundDecoration: AppDecorations.sectionTint(AppColors.lightGreen),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

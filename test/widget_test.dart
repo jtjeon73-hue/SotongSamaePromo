@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:sotong_samae_promo/data/app_catalog.dart';
 import 'package:sotong_samae_promo/main.dart';
 
 void main() {
@@ -8,6 +9,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('소통사매'), findsWidgets);
-    expect(find.textContaining('사매면 생활정보를 한눈에'), findsOneWidget);
+    expect(find.textContaining(AppCatalog.prelaunchBadge), findsWidgets);
+    expect(find.textContaining('미리 만나보세요'), findsOneWidget);
   });
 }

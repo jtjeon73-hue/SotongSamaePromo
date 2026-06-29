@@ -21,9 +21,9 @@ class PhoneMockup extends StatelessWidget {
           right: compact ? -8 : -16,
           top: compact ? 20 : 28,
           child: _FloatingBadge(
-            icon: Icons.landscape_outlined,
-            label: '관광 안내',
-            color: AppColors.green,
+            icon: Icons.schedule_outlined,
+            label: '출시 예정',
+            color: AppColors.heroAccent,
           ),
         ),
         Positioned(
@@ -103,7 +103,7 @@ class PhoneMockup extends StatelessWidget {
                           ),
                           SizedBox(height: 4),
                           Text(
-                            '사매면 주민 플랫폼',
+                            '사매면 주민 플랫폼 · 미리보기',
                             style: TextStyle(
                               color: Colors.white70,
                               fontSize: 11,

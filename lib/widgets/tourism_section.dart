@@ -22,7 +22,7 @@ class TourismSection extends StatelessWidget {
       anchorKey: sectionKey,
       eyebrow: 'VISIT SAMAE',
       title: '사매면 관광과 지역 매력',
-      subtitle: '방문 전에 미리 살펴보고, 현장에서는 길찾기와 먹거리 정보까지 — 사매 여행이 한결 수월해집니다.',
+      subtitle: '방문 전에 미리 살펴보고, 출시 후에는 길찾기와 먹거리 안내까지 — 사매 여행 준비에 도움이 됩니다.',
       child: ResponsiveGrid(
         minCardWidth: isMobile ? 260 : 300,
         maxColumns: 2,

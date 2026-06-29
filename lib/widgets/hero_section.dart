@@ -8,14 +8,14 @@ import 'phone_mockup.dart';
 class HeroSection extends StatelessWidget {
   const HeroSection({
     super.key,
-    required this.onExploreTap,
-    required this.onAboutTap,
-    required this.onNotifyTap,
+    required this.onPromoBrowseTap,
+    required this.onFeaturesTap,
+    required this.onContactTap,
   });
 
-  final VoidCallback onExploreTap;
-  final VoidCallback onAboutTap;
-  final VoidCallback onNotifyTap;
+  final VoidCallback onPromoBrowseTap;
+  final VoidCallback onFeaturesTap;
+  final VoidCallback onContactTap;
 
   @override
   Widget build(BuildContext context) {
@@ -80,12 +80,30 @@ class HeroSection extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                            decoration: BoxDecoration(
+                              color: AppColors.lightGreen.withValues(alpha: 0.22),
+                              borderRadius: BorderRadius.circular(100),
+                              border: Border.all(color: AppColors.lightGreen.withValues(alpha: 0.45)),
+                            ),
+                            child: Text(
+                              AppCatalog.prelaunchBadge,
+                              style: TextStyle(
+                                color: Colors.white.withValues(alpha: 0.95),
+                                fontSize: isMobile ? 11 : 12,
+                                fontWeight: FontWeight.w800,
+                                letterSpacing: 0.2,
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: isMobile ? 14 : 18),
                           Wrap(
                             spacing: 8,
                             runSpacing: 8,
                             children: [
                               _HeroPill('전북 남원시 사매면'),
-                              _HeroPill('지역 생활정보 앱', filled: true),
+                              _HeroPill('앱 미리보기', filled: true),
                             ],
                           ),
                           SizedBox(height: isMobile ? 18 : 24),
@@ -132,44 +150,52 @@ class HeroSection extends StatelessWidget {
                                   foregroundColor: AppColors.deepGreen,
                                   elevation: 0,
                                   padding: EdgeInsets.symmetric(
-                                    horizontal: isMobile ? 18 : 24,
+                                    horizontal: isMobile ? 16 : 22,
                                     vertical: isMobile ? 14 : 16,
                                   ),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(14),
                                   ),
-                                  textStyle: const TextStyle(fontWeight: FontWeight.w800, fontSize: 15),
+                                  textStyle: const TextStyle(fontWeight: FontWeight.w800, fontSize: 14),
                                 ),
-                                onPressed: onExploreTap,
-                                icon: const Icon(Icons.phone_android_outlined, size: 20),
-                                label: const Text('앱 둘러보기'),
+                                onPressed: onPromoBrowseTap,
+                                icon: const Icon(Icons.web_outlined, size: 20),
+                                label: const Text('프로모 사이트 둘러보기'),
                               ),
                               OutlinedButton.icon(
                                 style: OutlinedButton.styleFrom(
                                   foregroundColor: Colors.white,
                                   side: BorderSide(color: Colors.white.withValues(alpha: 0.45)),
                                   padding: EdgeInsets.symmetric(
-                                    horizontal: isMobile ? 18 : 24,
+                                    horizontal: isMobile ? 16 : 22,
                                     vertical: isMobile ? 14 : 16,
                                   ),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(14),
                                   ),
-                                  textStyle: const TextStyle(fontWeight: FontWeight.w800, fontSize: 15),
+                                  textStyle: const TextStyle(fontWeight: FontWeight.w800, fontSize: 14),
                                 ),
-                                onPressed: onAboutTap,
-                                icon: const Icon(Icons.map_outlined, size: 20),
-                                label: const Text('사매면 소개'),
+                                onPressed: onFeaturesTap,
+                                icon: const Icon(Icons.apps_outlined, size: 20),
+                                label: Text(isMobile ? '주요기능 보기' : '소통사매 주요기능 보기'),
                               ),
-                              if (isMobile)
-                                TextButton.icon(
-                                  style: TextButton.styleFrom(
-                                    foregroundColor: AppColors.lightGreen,
+                              OutlinedButton.icon(
+                                style: OutlinedButton.styleFrom(
+                                  foregroundColor: AppColors.lightGreen,
+                                  side: BorderSide(color: AppColors.lightGreen.withValues(alpha: 0.5)),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: isMobile ? 16 : 22,
+                                    vertical: isMobile ? 14 : 16,
                                   ),
-                                  onPressed: onNotifyTap,
-                                  icon: const Icon(Icons.notifications_active_outlined, size: 18),
-                                  label: const Text('출시 알림', style: TextStyle(fontWeight: FontWeight.w800)),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(14),
+                                  ),
+                                  textStyle: const TextStyle(fontWeight: FontWeight.w800, fontSize: 14),
                                 ),
+                                onPressed: onContactTap,
+                                icon: const Icon(Icons.mail_outline, size: 20),
+                                label: const Text('문의하기'),
+                              ),
                             ],
                           ),
                         ],
