@@ -17,9 +17,9 @@ class AiSection extends StatelessWidget {
         : AppCatalog.aiExamples;
 
     return LandingSection(
-      eyebrow: 'AI VILLAGE ASSISTANT',
+      eyebrow: '확장 기능 검토',
       title: 'AI 마을비서 활용 예시',
-      subtitle: '출시 예정인 AI 마을비서 기능 미리보기 — 공지·관광·행사·귀농 정보를 자연어로 물어보는 미래형 지역 앱을 준비하고 있습니다.',
+      subtitle: '지역 정보를 자연어로 묻고 답하는 기능은 향후 확장 기능으로 검토 중입니다. 아래는 구상 중인 활용 예시입니다.',
       backgroundDecoration: AppDecorations.sectionTint(AppColors.lightGreen),
       child: LayoutBuilder(
         builder: (context, constraints) {
@@ -76,14 +76,14 @@ class _AiChatPanel extends StatelessWidget {
           SizedBox(height: compact ? 14 : 18),
           const _ChatBubble(
             isUser: false,
-            text: '안녕하세요. 공지, 관광, 행사, 귀농 지원사업을 출시 후 물어보실 수 있습니다.',
+            text: '안녕하세요. 공지, 관광, 행사, 귀농 지원사업을 자연어로 물어보는 기능을 검토 중입니다.',
           ),
           const SizedBox(height: 10),
           const _ChatBubble(isUser: true, text: '혼불문학관 운영시간 알려줘'),
           const SizedBox(height: 10),
           const _ChatBubble(
             isUser: false,
-            text: '혼불문학관 운영시간, 위치, 전화번호, 사진, 영상, 길찾기 정보를 연결해 드립니다.',
+            text: '혼불문학관 운영시간, 위치, 전화번호, 사진, 영상, 길찾기 정보를 연결해 드릴 예정입니다.',
           ),
         ],
       ),

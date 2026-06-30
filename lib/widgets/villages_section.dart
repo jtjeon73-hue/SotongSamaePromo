@@ -20,9 +20,9 @@ class VillagesSection extends StatelessWidget {
 
     return LandingSection(
       anchorKey: sectionKey,
-      eyebrow: '21 VILLAGES',
+      eyebrow: '21개 마을',
       title: '사매면 21개 마을을 하나로 연결합니다',
-      subtitle: '마을별 게시판에서 이웃의 소식과 사진을 나누는 주민 소통 공간 — 출시 후 연결될 21개 마을을 미리 소개합니다.',
+      subtitle: '마을별 이야기와 생활 정보를 한곳에서 볼 수 있는 공간을 계획하고 있습니다.',
       backgroundDecoration: AppDecorations.sectionTint(AppColors.lightGreen),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -96,7 +96,7 @@ class _VillageCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 const Text(
-                  '마을 소식 · 이웃과 소통',
+                  '마을 소식 · 주민 소통 예정',
                   style: TextStyle(fontSize: 12, color: AppColors.textMuted),
                 ),
               ],

@@ -4,6 +4,7 @@ import '../data/app_catalog.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_decorations.dart';
 import '../theme/app_layout.dart';
+import 'landing_section.dart';
 
 class AudienceSection extends StatelessWidget {
   const AudienceSection({super.key});
@@ -12,62 +13,35 @@ class AudienceSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final isMobile = AppLayout.isMobile(context);
 
-    if (isMobile) {
-      return SizedBox(
-        height: 148,
-        child: ListView.separated(
-          padding: EdgeInsets.symmetric(horizontal: AppLayout.horizontalPadding(context)),
-          scrollDirection: Axis.horizontal,
-          itemCount: AppCatalog.audienceSegments.length,
-          separatorBuilder: (_, __) => const SizedBox(width: 12),
-          itemBuilder: (context, index) {
-            final seg = AppCatalog.audienceSegments[index];
-            return SizedBox(
-              width: 260,
-              child: _AudienceCard(segment: seg, compact: true),
-            );
-          },
-        ),
-      );
-    }
-
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: AppLayout.horizontalPadding(context),
-        vertical: 8,
-      ),
-      child: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 1180),
-          child: ResponsiveAudienceGrid(
-            children: [
-              for (final seg in AppCatalog.audienceSegments)
-                _AudienceCard(segment: seg),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class ResponsiveAudienceGrid extends StatelessWidget {
-  const ResponsiveAudienceGrid({super.key, required this.children});
-
-  final List<Widget> children;
-
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final columns = constraints.maxWidth >= 900 ? 4 : 2;
-        final width = (constraints.maxWidth - 12 * (columns - 1)) / columns;
-        return Wrap(
-          spacing: 12,
-          runSpacing: 12,
-          children: [for (final c in children) SizedBox(width: width, child: c)],
-        );
-      },
+    return LandingSection(
+      eyebrow: '이용 대상',
+      title: '이런 분들께 필요합니다',
+      subtitle: '사매면 주민과 방문객, 그리고 지역에 관심 있는 분들을 위한 정보 공간을 준비하고 있습니다.',
+      child: isMobile
+          ? SizedBox(
+              height: 168,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemCount: AppCatalog.audienceSegments.length,
+                separatorBuilder: (_, __) => const SizedBox(width: 12),
+                itemBuilder: (context, index) {
+                  final seg = AppCatalog.audienceSegments[index];
+                  return SizedBox(
+                    width: 260,
+                    child: _AudienceCard(segment: seg, compact: true),
+                  );
+                },
+              ),
+            )
+          : ResponsiveGrid(
+              minCardWidth: 240,
+              maxColumns: 4,
+              spacing: 14,
+              children: [
+                for (final seg in AppCatalog.audienceSegments)
+                  _AudienceCard(segment: seg),
+              ],
+            ),
     );
   }
 }
@@ -94,16 +68,11 @@ class _AudienceCard extends StatelessWidget {
                 child: Icon(segment.icon, size: 18, color: AppColors.deepGreen),
               ),
               const SizedBox(width: 10),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                decoration: BoxDecoration(
-                  color: AppColors.lightGreen,
-                  borderRadius: BorderRadius.circular(100),
-                ),
+              Expanded(
                 child: Text(
                   segment.label,
                   style: const TextStyle(
-                    fontSize: 11,
+                    fontSize: 12,
                     fontWeight: FontWeight.w800,
                     color: AppColors.deepGreen,
                   ),

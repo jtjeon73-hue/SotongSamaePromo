@@ -11,11 +11,13 @@ class CtaSection extends StatelessWidget {
     required this.sectionKey,
     required this.onNotifyTap,
     required this.onContactTap,
+    required this.onFeedbackTap,
   });
 
   final Key sectionKey;
   final VoidCallback onNotifyTap;
   final VoidCallback onContactTap;
+  final VoidCallback onFeedbackTap;
 
   @override
   Widget build(BuildContext context) {
@@ -82,9 +84,9 @@ class CtaSection extends StatelessWidget {
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
                         textStyle: const TextStyle(fontWeight: FontWeight.w800),
                       ),
-                      onPressed: onNotifyTap,
-                      icon: const Icon(Icons.notifications_active_outlined),
-                      label: const Text('출시 소식 알림 받기'),
+                      onPressed: onContactTap,
+                      icon: const Icon(Icons.mail_outline),
+                      label: const Text('문의하기'),
                     ),
                     const SizedBox(height: 12),
                     OutlinedButton.icon(
@@ -95,9 +97,22 @@ class CtaSection extends StatelessWidget {
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
                         textStyle: const TextStyle(fontWeight: FontWeight.w800),
                       ),
-                      onPressed: onContactTap,
-                      icon: const Icon(Icons.mail_outline),
-                      label: const Text('문의하기'),
+                      onPressed: onFeedbackTap,
+                      icon: const Icon(Icons.edit_note_outlined),
+                      label: const Text('의견 보내기'),
+                    ),
+                    const SizedBox(height: 12),
+                    OutlinedButton.icon(
+                      style: OutlinedButton.styleFrom(
+                        foregroundColor: AppColors.lightGreen,
+                        side: BorderSide(color: AppColors.lightGreen.withValues(alpha: 0.5)),
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                        textStyle: const TextStyle(fontWeight: FontWeight.w800),
+                      ),
+                      onPressed: onNotifyTap,
+                      icon: const Icon(Icons.notifications_active_outlined),
+                      label: const Text('앱 출시 소식 받기'),
                     ),
                   ],
                 );

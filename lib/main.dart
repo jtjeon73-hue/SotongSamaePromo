@@ -13,6 +13,7 @@ import 'widgets/features_section.dart';
 import 'widgets/footer_section.dart';
 import 'widgets/hero_section.dart';
 import 'widgets/top_navigation.dart';
+import 'widgets/preparation_stage_section.dart';
 import 'widgets/tourism_section.dart';
 import 'widgets/villages_section.dart';
 
@@ -101,6 +102,8 @@ class _PromoHomePageState extends State<PromoHomePage> {
 
   void _contact() => _scrollToAnchor('contact');
 
+  void _feedback() => openFeedbackEmail();
+
   @override
   Widget build(BuildContext context) {
     final isMobile = AppLayout.isMobile(context);
@@ -121,25 +124,26 @@ class _PromoHomePageState extends State<PromoHomePage> {
                   child: HeroSection(
                     onPromoBrowseTap: _browsePromo,
                     onFeaturesTap: _showFeatures,
-                    onContactTap: _contact,
+                    onFeedbackTap: _feedback,
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 12),
+                const CoreValuesSection(),
                 KeyedSubtree(
                   key: _promoKey,
                   child: const AudienceSection(),
                 ),
-                const SizedBox(height: 12),
-                const CoreValuesSection(),
                 FeaturesSection(sectionKey: _featuresKey),
                 VillagesSection(sectionKey: _villagesKey),
                 TourismSection(sectionKey: _tourismKey),
+                const PreparationStageSection(),
                 const DevelopmentSection(),
                 const AiSection(),
                 CtaSection(
                   sectionKey: _contactKey,
                   onNotifyTap: openLaunchNotifyEmail,
                   onContactTap: openContactEmail,
+                  onFeedbackTap: _feedback,
                 ),
                 FooterSection(onAnchorTap: _scrollToAnchor),
                 if (isMobile) const SizedBox(height: 72),
@@ -172,7 +176,8 @@ class _MobileStickyCta extends StatelessWidget {
         color: AppColors.creamSurface.withValues(alpha: 0.96),
         border: const Border(top: BorderSide(color: AppColors.warmBorder)),
         boxShadow: const [
-          BoxShadow(color: Color(0x14000000), blurRadius: 16, offset: Offset(0, -4)),
+          BoxShadow(
+              color: Color(0x14000000), blurRadius: 16, offset: Offset(0, -4)),
         ],
       ),
       child: SafeArea(
@@ -181,11 +186,13 @@ class _MobileStickyCta extends StatelessWidget {
           style: FilledButton.styleFrom(
             backgroundColor: AppColors.green,
             minimumSize: const Size.fromHeight(48),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
           ),
           onPressed: onTap,
           icon: const Icon(Icons.mail_outline),
-          label: const Text('문의하기', style: TextStyle(fontWeight: FontWeight.w800)),
+          label:
+              const Text('문의하기', style: TextStyle(fontWeight: FontWeight.w800)),
         ),
       ),
     );

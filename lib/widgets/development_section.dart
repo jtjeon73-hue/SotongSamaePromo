@@ -14,7 +14,7 @@ class DevelopmentSection extends StatelessWidget {
     final isMobile = AppLayout.isMobile(context);
 
     return LandingSection(
-      eyebrow: 'COMMUNITY GROWTH',
+      eyebrow: '사매발전',
       title: '사매발전, 함께 만드는 사매면',
       subtitle: AppCatalog.developmentMessage,
       backgroundDecoration: AppDecorations.sectionTint(AppColors.cream),
@@ -37,7 +37,7 @@ class DevelopmentSection extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '디지털 행정 보조 · 주민 연결 · 지역 커뮤니티',
+                  '주민 연결 · 지역 커뮤니티 · 투명한 소통',
                   style: TextStyle(
                     color: Colors.white.withValues(alpha: 0.82),
                     fontWeight: FontWeight.w700,
@@ -56,7 +56,7 @@ class DevelopmentSection extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  '주민 제안부터 사업 진행까지, 사매면의 변화를 출시 후 앱에서 투명하게 따라갈 수 있습니다.',
+                  '주민 제안부터 사업 진행까지, 사매면의 변화를 함께 따라갈 수 있도록 준비하고 있습니다.',
                   style: TextStyle(
                     color: Colors.white.withValues(alpha: 0.88),
                     fontSize: isMobile ? 13 : 14,

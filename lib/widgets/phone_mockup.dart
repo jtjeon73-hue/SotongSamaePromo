@@ -82,7 +82,7 @@ class PhoneMockup extends StatelessWidget {
                               Icon(Icons.spa_outlined, color: Colors.white70, size: 16),
                               SizedBox(width: 6),
                               Text(
-                                'SotongSamae',
+                                '소통사매',
                                 style: TextStyle(
                                   color: Colors.white70,
                                   fontSize: 11,
@@ -144,7 +144,7 @@ class PhoneMockup extends StatelessWidget {
                           _MockTab(Icons.diversity_3_outlined, '마을'),
                           _MockTab(Icons.handshake_outlined, '발전'),
                           _MockTab(Icons.landscape_outlined, '관광'),
-                          _MockTab(Icons.smart_toy_outlined, 'AI'),
+                          _MockTab(Icons.mail_outline, '문의'),
                         ],
                       ),
                     ),

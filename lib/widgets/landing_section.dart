@@ -57,7 +57,6 @@ class LandingSection extends StatelessWidget {
                       fontSize: 12,
                       fontWeight: FontWeight.w800,
                       color: AppColors.deepGreen,
-                      letterSpacing: 0.3,
                     ),
                   ),
                 ),

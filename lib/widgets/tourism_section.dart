@@ -20,9 +20,9 @@ class TourismSection extends StatelessWidget {
 
     return LandingSection(
       anchorKey: sectionKey,
-      eyebrow: 'VISIT SAMAE',
+      eyebrow: '관광 안내',
       title: '사매면 관광과 지역 매력',
-      subtitle: '방문 전에 미리 살펴보고, 출시 후에는 길찾기와 먹거리 안내까지 — 사매 여행 준비에 도움이 됩니다.',
+      subtitle: '방문 전에 미리 살펴볼 수 있도록, 사매면의 관광지와 지역 이야기를 소개합니다.',
       child: ResponsiveGrid(
         minCardWidth: isMobile ? 260 : 300,
         maxColumns: 2,

@@ -10,12 +10,12 @@ class HeroSection extends StatelessWidget {
     super.key,
     required this.onPromoBrowseTap,
     required this.onFeaturesTap,
-    required this.onContactTap,
+    required this.onFeedbackTap,
   });
 
   final VoidCallback onPromoBrowseTap;
   final VoidCallback onFeaturesTap;
-  final VoidCallback onContactTap;
+  final VoidCallback onFeedbackTap;
 
   @override
   Widget build(BuildContext context) {
@@ -111,8 +111,8 @@ class HeroSection extends StatelessWidget {
                             AppCatalog.tagline,
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: isWide ? 44 : (isMobile ? 28 : 34),
-                              height: 1.15,
+                              fontSize: isWide ? 44 : (isMobile ? 26 : 34),
+                              height: 1.2,
                               fontWeight: FontWeight.w900,
                               letterSpacing: -1,
                             ),
@@ -177,7 +177,7 @@ class HeroSection extends StatelessWidget {
                                 ),
                                 onPressed: onFeaturesTap,
                                 icon: const Icon(Icons.apps_outlined, size: 20),
-                                label: Text(isMobile ? '주요기능 보기' : '소통사매 주요기능 보기'),
+                                label: const Text('주요 기능 미리보기'),
                               ),
                               OutlinedButton.icon(
                                 style: OutlinedButton.styleFrom(
@@ -192,9 +192,9 @@ class HeroSection extends StatelessWidget {
                                   ),
                                   textStyle: const TextStyle(fontWeight: FontWeight.w800, fontSize: 14),
                                 ),
-                                onPressed: onContactTap,
-                                icon: const Icon(Icons.mail_outline, size: 20),
-                                label: const Text('문의하기'),
+                                onPressed: onFeedbackTap,
+                                icon: const Icon(Icons.edit_note_outlined, size: 20),
+                                label: const Text('의견 보내기'),
                               ),
                             ],
                           ),

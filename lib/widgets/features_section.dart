@@ -16,9 +16,9 @@ class FeaturesSection extends StatelessWidget {
 
     return LandingSection(
       anchorKey: sectionKey,
-      eyebrow: 'APP FEATURES',
-      title: '앱 주요 기능',
-      subtitle: '출시 예정인 소통사매앱의 하단 5개 탭과 홈 메뉴 8종을 미리 살펴보세요.',
+      eyebrow: '주요 기능 미리보기',
+      title: '주요 기능 미리보기',
+      subtitle: '소통사매앱에서 제공을 준비 중인 주요 메뉴와 정보 구조를 미리 살펴보세요.',
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

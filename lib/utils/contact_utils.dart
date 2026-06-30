@@ -31,6 +31,20 @@ Future<void> openLaunchNotifyEmail() async {
   }
 }
 
+Future<void> openFeedbackEmail() async {
+  final uri = Uri(
+    scheme: 'mailto',
+    path: AppCatalog.contactEmail,
+    query: _encodeQuery({
+      'subject': '[소통사매] 의견 및 제안',
+      'body': '안녕하세요.\n\n소통사매 앱에 대한 의견이나 제안을 남깁니다.\n\n- 필요한 정보:\n- 추가되었으면 하는 기능:\n\n',
+    }),
+  );
+  if (!await launchUrl(uri)) {
+    debugPrint('mailto 열기 실패: $uri');
+  }
+}
+
 // TODO: Play Store 링크 확정 후 AppCatalog.playStoreUrl 연결
 Future<void> openAppStore() async {
   final url = AppCatalog.playStoreUrl;

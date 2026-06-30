@@ -10,6 +10,6 @@ void main() {
 
     expect(find.text('소통사매'), findsWidgets);
     expect(find.textContaining(AppCatalog.prelaunchBadge), findsWidgets);
-    expect(find.textContaining('미리 만나보세요'), findsOneWidget);
+    expect(find.textContaining('준비 중입니다'), findsWidgets);
   });
 }
